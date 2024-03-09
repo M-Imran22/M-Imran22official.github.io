@@ -1,0 +1,405 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  padding: 0;
+  overflow: auto;
+  font-family: "Exo 2";
+}
+.mySlides {
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+}
+.h1 {
+  margin-top: 15%;
+  font-family: "Amatic SC", sans-serif;
+  font-size: 72px;
+  color: #ffffff;
+  text-align: center;
+}
+
+/* Slideshow container */
+.slideshow-container {
+  width: 100%;
+  height: 40.5rem;
+  margin-bottom: -35px;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  display: none;
+  transition: 0.6s ease;
+}
+/* Fading animation */
+.fade {
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+nav {
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  background-color: #585858;
+  position: fixed;
+  z-index: 1;
+}
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: fixed;
+}
+
+nav ul li {
+  float: left;
+}
+
+nav ul li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 10px 18px;
+  text-decoration: none;
+  font-size: 18px;
+}
+
+nav ul li a:hover:not(.active) {
+  background-color: #111;
+  height: 50px;
+}
+.preemptive-links {
+  padding-bottom: 100px;
+}
+
+.active {
+  background-color: #04aa6d;
+  margin-right: 720px;
+  margin-left: 20px;
+}
+
+.about-process {
+  width: 100%;
+  height: 1100px;
+  background-color: #d9d9d9;
+}
+.paragraph {
+  text-align: center;
+  font-size: 32px;
+  font-weight: 400;
+  line-height: 3rem;
+  font-family: "Exo 2";
+}
+.about-process #p1 {
+  padding: 200px 500px 0 80px;
+  color: #284b63;
+}
+.about-process #p2 {
+  padding: 100px 80px 0 500px;
+  color: #ba181b;
+}
+.button-section {
+  margin-top: -60px;
+  width: 100%;
+  height: 800px;
+  background-color: #284b63;
+}
+.algorithm-h1 {
+  padding-top: 150px;
+  font-family: "Amatic SC", sans-serif;
+  font-size: 72px;
+  color: #ffffff;
+  text-align: center;
+}
+.buttons {
+  width: 900px;
+  position: relative;
+  left: 200px;
+  margin: 50px 70px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  z-index: 0;
+}
+.buttons a {
+  font-family: "Exo 2";
+  margin: 30px 45px;
+  text-decoration: none;
+  color: #ffffff;
+  border-radius: 50% 20% / 10% 40%;
+  width: 200px;
+  height: 200px;
+  text-align: center;
+  padding-top: 65px;
+  font-size: 26px;
+  font-weight: bold;
+  /* z-index: 0; */
+  transition: 1s;
+}
+.buttons a:hover {
+  width: 205px;
+  height: 205px;
+}
+.fcfs {
+  background-color: #a4161a;
+}
+.sjf {
+  background-color: #353535;
+
+  border-radius: 10px 100px / 120px;
+}
+.ljf {
+  background-color: #ff6700;
+}
+.HNH-priority-based {
+  background-color: #0975da;
+  margin: auto;
+  border-radius: 10px 100px / 120px;
+  padding-top: 45px !important ;
+}
+.LNH-priority-based {
+  background-color: darkgreen;
+  margin: auto;
+  border-radius: 10px 100px / 120px;
+  padding-top: 45px !important ;
+}
+.bottomLine {
+  margin: 0 100px;
+  border-bottom: 1px solid #fff;
+}
+.notes-body {
+  background-color: #353535;
+  color: #fff;
+  overflow: hidden;
+  line-height: 2rem;
+  font-size: 18px;
+}
+.notes-navbar {
+  top: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #585858;
+  position: fixed;
+}
+.notes-main {
+  margin-top: 60px;
+  display: flex;
+  height: 100vh;
+}
+.notes-left-bar {
+  width: 270px;
+  border-right: 1px solid #fff;
+  overflow: auto;
+}
+.notes-side-bar h2 {
+  text-align: center;
+  border-bottom: 1px solid #fff;
+  padding: 15px;
+  margin: 20px 22px;
+  font-family: "Amatic SC", sans-serif;
+  font-size: 35px;
+}
+.notes-side-bar ul li {
+  padding-top: 20px;
+  display: flex;
+}
+.notes-side-bar-h3,
+.notes-side-bar ul li a {
+  text-decoration: none;
+  color: #fff;
+  transition: 0.5s;
+}
+.notes-side-bar-h3:hover,
+.notes-side-bar a:hover,
+.notes-active a {
+  border-bottom: 1px solid #fff;
+  font-size: 20px;
+}
+
+.notes-Main {
+  flex: 1;
+  overflow: auto;
+  padding: 0 200px 80px 30px;
+}
+.notes-heading {
+  width: 100%;
+  font-family: "Amatic SC", sans-serif;
+  font-size: 62px;
+  font-weight: bold;
+  border-bottom: 1px solid #fff;
+  background-color: #353535;
+  text-align: center;
+  padding-top: 15px;
+  line-height: normal;
+}
+
+table,
+td,
+th {
+  border: 1px solid;
+  text-align: center;
+}
+table {
+  border-collapse: collapse;
+}
+table td {
+  height: 70px;
+  width: auto;
+}
+table th {
+  height: 80px;
+  background-color: #585858;
+}
+blockquote {
+  margin: 10px 0;
+  background: #585858;
+  border-radius: 14px;
+  margin-bottom: 24px;
+  padding: 24px;
+  font-style: italic;
+  word-break: break-word;
+}
+
+/*---------------------------------------------------------------------------------Styling FCFS -------------------------------------------------------------------- */
+.algorithm-body {
+  background-color: #353535;
+  color: #fff;
+}
+#headerFcfs {
+  display: flex;
+  flex-direction: column;
+  /* border: 1px solid black; */
+  align-items: center;
+  justify-content: space-around;
+}
+#heading-fcfs {
+  text-align: center;
+  color: #fff;
+  font-family: "Amatic SC", sans-serif;
+  font-size: 62px;
+  padding: 15px 0;
+}
+
+#formFieldsContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 20px 0;
+}
+.form-buttons {
+  font-family: "Exo 2", "Nunito", sans-serif;
+  display: block !important;
+  margin: auto !important;
+  background-color: #284b63 !important;
+  color: #fff;
+  height: 2.5rem !important;
+  width: 8rem !important;
+  letter-spacing: 0.07rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#InputOfNumberOfProcesses,
+#formFieldsContainer {
+  background-color: #585858;
+  padding: 30px 45px;
+  border-radius: 1rem;
+  text-align: center;
+  width: 30rem;
+}
+#InputOfNumberOfProcesses input,
+#formFieldsContainer input {
+  margin: 1.5rem 0rem;
+  width: 10rem;
+  font-size: 1rem;
+  outline-color: #585858;
+  border: none;
+  border-radius: 0.2rem;
+  padding-left: 0.2rem;
+  font-family: "Exo 2", "Nunito", sans-serif;
+  height: 2rem;
+  background: none;
+  color: #fff;
+  border-bottom: 1px solid #fff;
+}
+#InputOfNumberOfProcesses input::placeholder,
+#formFieldsContainer input::placeholder {
+  color: #ffffff96;
+}
+#InputOfNumberOfProcesses input,
+#timeQ-input {
+  width: 13rem !important;
+}
+#processContainer {
+  display: flex;
+  column-gap: 1rem;
+}
+.inputError {
+  color: red;
+  background-color: #fff;
+  text-align: center;
+  border-radius: 5px;
+}
+
+#ganttChart div div {
+  width: 10rem;
+  height: 3rem;
+  border: 1px solid rgb(255, 255, 255);
+  text-align: center;
+  padding-top: 0.8rem;
+  font-size: 1.5rem;
+  /* border-radius: 0.4rem; */
+  background-color: #585858;
+  color: white;
+}
+#ganttChart {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  overflow: hidden;
+  opacity: 0; /*Set initial opacity to 0 */
+  transition: opacity 1s ease-in-out; /* Add a smooth transition effect */
+}
+
+#ganttChart.show {
+  opacity: 1; /* Set opacity to 1 when the "show" class is added */
+}
+#ganttChart div {
+  margin-bottom: 1rem;
+}
+#ganttChart p {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+#table table {
+  /* border: 1px solid black; */
+  border-collapse: collapse;
+  text-align: center;
+  margin-bottom: 50px;
+  opacity: 0;
+  transition: opacity 1s ease-in-out;
+}
+#table table thead tr th {
+  border: 1px solid #fff;
+  padding: 0.4rem 1rem;
+  border-radius: 0.3rem;
+}
+#table table caption {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+table tr td {
+  border: 1px solid #fff;
+  border-radius: 0.3rem;
+  font-size: 1.2rem;
+  padding: 0.2rem;
+}
+#table table.show {
+  opacity: 1;
+}

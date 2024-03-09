@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Home.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <title>All Notes</title>
+  </head>
+  <body class="notes-body">
+    <header>
+      <nav class="notes-navbar">
+        <ul>
+          <li style="float: left">
+            <a class="active" href="#about">LOGO</a>
+          </li>
+          <li><a href="Home.html"><i class="fa-solid fa-house"></i> Home</a></li>
+          <li><a href="non-preemptive-notes.html"><i class="fa-solid fa-book"></i> Notes</a></li>
+          <li><a href="fcfs.html"><i class="fa-solid fa-book"></i> Algorithms</a></li>
+          <li><a href="#contact">About Us</a></li>
+        </ul>
+      </nav>
+      </nav>
+    </header>
+    <section class="notes-main">
+      <div class="notes-left-bar grid-item">
+        <div class="notes-side-bar">
+          <h2>Algorithms Notes</h2>
+          <ul>
+            <h3 style="text-align: center; padding-top: 25px">
+              <a href="non-preemptive-notes.html" class="notes-side-bar-h3">Non-Pre-emptive</a>
+            </h3>
+            <li>
+              <a href="FCFS-Notes.html"
+                >FCFS<br /><i style="font-size: 14px"
+                  >(First Come First Serive)</i
+                ></a
+              >
+            </li>
+            <li>
+              <a href="SJF-Notes.html"
+                >SJF<br /><i style="font-size: 14px">(Shortest Job First)</i></a
+              >
+            </li>
+            <li>
+              <a href="LJF-Notes.html"
+                >LJF<br /><i style="font-size: 14px">(Longest Job First)</i></a
+              >
+            </li>
+            
+          </ul>
+          <ul class="preemptive-links">
+            <h3 style="text-align: center; padding-top: 25px"><a href="preemptive-notes.html" class="notes-side-bar-h3">Pre-emptive</a>
+            </h3>
+            <li><a href="RR-Notes.html">Round Robin</a></li>
+            <li>
+              <a href="SRTF-Notes.html" class="sjf"
+                >SRTF<br /><i style="font-size: 14px"
+                  >(Shortest Remaining Time First)</i
+                ></a
+              >
+            </li>
+            
+          </ul>
+        </div>
+      </div>
+      <div class="notes-Main grid-item">
+        <div class="notes-heading">
+          Shortest Remaining Time First (SRTF) <br>CUP Scheduler (Pre-emptive)
+        </div>
+        <p>In previous post, we have discussed Set 1 of SJF i.e. non-preemptive. In this post we will discuss the preemptive version of SJF known as Shortest Remaining Time First (SRTF).</p>
+
+
+
+        <p>In the <strong>Shortest Remaining Time First (SRTF) scheduling algorithm</strong>, the process with the smallest amount of time remaining until completion is selected to execute. Since the currently executing process is the one with the shortest amount of time remaining by definition, and since that time should only reduce as execution progresses, processes will always run until they complete or a new process is added that requires a <strong>smaller amount of time.</strong></p><div id="GFG_AD_gfg_mobile_336x280"></div>
+        
+        
+        
+        <p><strong><u>Examples to show working of Preemptive Shortest Job First CPU Scheduling Algorithm:</u></strong></p>
+        
+        
+        
+        <p><strong>Example-1: </strong>Consider the following table of arrival time and burst time for five processes <strong>P1, P2, P3, P4</strong> and <strong>P5</strong>.
+        
+        <figure class="table"><table><thead><tr><th><strong>Process</strong></th><th><strong>Burst Time</strong></th><th><strong>Arrival Time</strong></th></tr></thead><tbody><tr><td>&nbsp;P1 &nbsp;</td><td>&nbsp;6 ms</td><td>2 ms</td></tr><tr><td>&nbsp;P2</td><td>&nbsp;2 ms</td><td>5 ms</td></tr><tr><td>&nbsp;P3</td><td>&nbsp;8 ms</td><td>1 ms</td></tr><tr><td>&nbsp;P4</td><td>&nbsp;3 ms</td><td>0 ms</td></tr><tr><td>&nbsp;P5</td><td>&nbsp;4 ms</td><td>4 ms</td></tr></tbody></table></figure>
+        
+        <p>The Shortest Job First CPU Scheduling Algorithm will work on the basis of steps as mentioned below:</p>
+        
+        
+        
+        <p><strong>At time = 0,</strong></p>
+        
+        <ul><li>Process P4 arrives and starts executing</li></ul><figure class="table"><table><thead><tr><th>Time Instance</th><th>Process</th><th>Arrival Time</th><th>Waiting Table</th><th>Execution Time</th><th>Initial Burst Time</th><th>Remaining Burst&nbsp;<br>Time</th></tr></thead><tbody><tr><td>0-1ms</td><td>P4</td><td>0ms</td><td>&nbsp;</td><td>1ms</td><td>3ms</td><td>2ms</td></tr></tbody></table></figure>
+        
+        <p><strong>At time= 1,&nbsp;</strong></p>
+        
+        <ul><li>Process P3 arrives.&nbsp;</li><li>But, as P4 has a shorter burst time. It will continue execution.</li><li>Thus, P3 will wait till P4 gets executed.</li></ul><figure class="table"><table><thead><tr><th>Time Instance</th><th>Process</th><th>Arrival Time</th><th>Waiting Table</th><th>Execution Time</th><th>Initial Burst Time</th><th>Remaining Burst&nbsp;<br>Time</th></tr></thead><tbody><tr><td rowspan="2">1-2ms</td><td>P4</td><td>0ms</td><td rowspan="2">&nbsp; &nbsp; &nbsp; &nbsp; P3</td><td>1ms</td><td>2ms</td><td>1ms</td></tr><tr><td>P3</td><td>1ms</td><td>0ms</td><td>8ms</td><td>8ms</td></tr></tbody></table></figure>
+        
+        <p><strong>At time =2,</strong>&nbsp;</p>
+        
+        <ul><li>Process P1 arrives with burst time = 6</li><li>As the burst time of P1 is more than that of P4&nbsp;</li><li>Thus, P4 will continue its execution.</li></ul><figure class="table"><table><thead><tr><th>Time Instance</th><th>Process</th><th>Arrival Time</th><th>Waiting Table</th><th>Execution Time</th><th>Initial Burst Time</th><th>Remaining Burst&nbsp;<br>Time</th></tr></thead><tbody><tr><td rowspan="3">2-3ms</td><td><s>P4</s></td><td><s>0ms</s></td><td rowspan="3">&nbsp; &nbsp; &nbsp; P3, P1</td><td><s>1ms</s></td><td><s>1ms</s></td><td><s>0ms</s></td></tr><tr><td>P3</td><td>1ms</td><td>0ms</td><td>8ms</td><td>8ms</td></tr><tr><td>P1</td><td>2ms</td><td>0ms</td><td>6ms</td><td>6ms</td></tr></tbody></table></figure>
+        
+        <p><strong>At time = 3,&nbsp;</strong></p>
+        
+        <ul><li>Process P4 will finish its execution.&nbsp;</li><li>Then, the burst time of P3 and P1 is compared.&nbsp;</li><li>Process P1 is executed because its burst time is less as compared to P3.</li></ul><figure class="table"><table><thead><tr><th>Time Instance</th><th>Process</th><th>Arrival Time</th><th>Waiting Table</th><th>Execution Time</th><th>Initial Burst Time</th><th>Remaining Burst&nbsp;<br>Time</th></tr></thead><tbody><tr><td rowspan="2">3-4ms</td><td>P3</td><td>1ms</td><td rowspan="2">
+        
+        <p>&nbsp; &nbsp;&nbsp;</p>
+        
+        
+        
+        <p>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; P3</p>
+        
+        </td><td>0ms</td><td>8ms</td><td>8ms</td></tr><tr><td>P1</td><td>2ms</td><td>1ms</td><td>6ms</td><td>5ms</td></tr></tbody></table></figure>
+        
+        <p><strong>At time = 4,</strong>&nbsp;</p>
+        
+        <ul><li>Process P5 arrives.</li><li>Then the burst time of P3, P5, and P1 is compared.&nbsp;</li><li>Process P5 gets executed first among them because its burst time is lowest, and process P1 is <strong>preempted</strong>.</li></ul><figure class="table"><table><thead><tr><th>Time Instance</th><th>Process</th><th>Arrival Time</th><th>Waiting Table</th><th>Execution Time</th><th>Initial Burst Time</th><th>Remaining Burst&nbsp;<br>Time</th></tr></thead><tbody><tr><td rowspan="3">4-5ms</td><td>P3</td><td>1ms</td><td rowspan="3">&nbsp; &nbsp; &nbsp; &nbsp;P3, P1</td><td>0ms</td><td>8ms</td><td>8ms</td></tr><tr><td>P1</td><td>2ms</td><td>0ms</td><td>5ms</td><td>5ms</td></tr><tr><td>P5</td><td>4ms</td><td>1ms</td><td>4ms</td><td>3ms</td></tr></tbody></table></figure>
+        
+        <p><strong>At time = 5,&nbsp;</strong></p>
+        
+        <ul><li>Process P2 arrives.</li><li>The burst time of all processes are compared,&nbsp;</li><li>Process P2 gets executed as its burst time is lowest among all.&nbsp;</li><li>Process P5 is preempted.</li></ul><figure class="table"><table><thead><tr><th>Time Instance</th><th>Process</th><th>Arrival Time</th><th>Waiting Table</th><th>Execution Time</th><th>Initial Burst Time</th><th>Remaining Burst&nbsp;<br>Time</th></tr></thead><tbody><tr><td rowspan="4">5-6ms</td><td>P3</td><td>1ms</td><td rowspan="4">&nbsp; &nbsp;P3, P5, P1</td><td>0ms</td><td>8ms</td><td>8ms</td></tr><tr><td>P1</td><td>2ms</td><td>0ms</td><td>5ms</td><td>5ms</td></tr><tr><td>P5</td><td>4ms</td><td>0ms</td><td>3ms</td><td>3ms</td></tr><tr><td>P2</td><td>5ms</td><td>1ms</td><td>2ms</td><td>1ms</td></tr></tbody></table></figure>
+        
+        <p><strong>At time = 6,&nbsp;</strong></p>
+        
+        <ul><li>Process P2 will keep executing.</li><li>It will execute till time = 8 as the burst time of P2 is 2ms</li></ul><figure class="table"><table><thead><tr><th>Time Instance</th><th>Process</th><th>Arrival Time</th><th>Waiting Table</th><th>Execution Time</th><th>Initial Burst Time</th><th>Remaining Burst&nbsp;<br>Time</th></tr></thead><tbody><tr><td rowspan="4">6-7ms</td><td>P3</td><td>1ms</td><td rowspan="4"><p style="text-align:center">P3, P5, P1</p>
+        
+        </td><td>0ms</td><td>8ms</td><td>8ms</td></tr><tr><td>P1</td><td>2ms</td><td>0ms</td><td>5ms</td><td>5ms</td></tr><tr><td>P5</td><td>4ms</td><td>0ms</td><td>3ms</td><td>3ms</td></tr><tr><td><s>P2</s></td><td><s>5ms</s></td><td><s>1ms</s></td><td><s>1ms</s></td><td><s>0ms</s></td></tr></tbody></table></figure>
+        
+        <p><strong>At time=7,&nbsp;</strong></p><div style="text-align:center;margin:20px 0;max-height: 280px;" id="GFG_AD_gfg_outstream_incontent"></div>
+        
+        <ul><li>The process P2 finishes its execution.</li><li>Then again the burst time of all remaining processes is compared.&nbsp;</li><li>The Process P5 gets executed because its burst time is lesser than the others.</li></ul><figure class="table"><table><thead><tr><th>Time Instance</th><th>Process</th><th>Arrival Time</th><th>Waiting Table</th><th>Execution Time</th><th>Initial Burst Time</th><th>Remaining Burst&nbsp;<br>Time</th></tr></thead><tbody><tr><td rowspan="3">7-10ms</td><td>P3</td><td>1ms</td><td rowspan="3">P3, P1</td><td>0ms</td><td>8ms</td><td>8ms</td></tr><tr><td>P1</td><td>2ms</td><td>0ms</td><td>5ms</td><td>5ms</td></tr><tr><td><s>P5</s></td><td><s>4ms</s></td><td><s>3ms</s></td><td><s>3ms</s></td><td><s>0ms</s></td></tr></tbody></table></figure>
+        
+        <p><strong>At time = 10,&nbsp;</strong></p>
+        
+        <ul><li>The process P5 will finish its execution.&nbsp;</li><li>Then the burst time of the remaining processes P1 and P3 is compared.&nbsp;</li><li>Thus, process P1 is executed as its burst time is less than P3</li></ul><figure class="table"><table><thead><tr><th>Time Instance</th><th>Process</th><th>Arrival Time</th><th>Waiting Table</th><th>Execution Time</th><th>Initial Burst Time</th><th>Remaining Burst&nbsp;<br>Time</th></tr></thead><tbody><tr><td rowspan="2">10-15ms</td><td>P3</td><td>1ms</td><td rowspan="2">&nbsp; &nbsp; &nbsp; &nbsp; P3</td><td>0ms</td><td>8ms</td><td>8ms</td></tr><tr><td><s>P1</s></td><td><s>4ms</s></td><td><s>4ms</s></td><td><s>5ms</s></td><td><s>0ms</s></td></tr></tbody></table></figure>
+        
+        <p><strong>At time = 15,</strong></p>
+        
+        <ul><li>The process P1 finishes its execution and P3 is the only process left.&nbsp;</li><li>P3 will start executing.</li></ul><figure class="table"><table><thead><tr><th>Time Instance</th><th>Process</th><th>Arrival Time</th><th>Waiting Table</th><th>Execution Time</th><th>Initial Burst Time</th><th>Remaining Burst&nbsp;<br>Time</th></tr></thead><tbody><tr><td>15-23ms</td><td><s>P3</s></td><td><s>1ms</s></td><td>&nbsp;</td><td><s>8ms</s></td><td><s>8ms</s></td><td><s>0ms</s></td></tr></tbody></table></figure>
+        
+        <p><strong>At time = 23,&nbsp;</strong></p>
+        
+        <ul><li>Process P3 will finish its execution.</li><li>The overall execution of the processes will be as shown below:</li></ul><figure class="table"><table><thead><tr><th>Time Instance</th><th>Process</th><th>Arrival Time</th><th>Waiting Table</th><th>Execution Time</th><th>Initial Burst Time</th><th>Remaining Burst&nbsp;<br>Time</th></tr></thead><tbody><tr><td>0-1ms</td><td>P4</td><td>0ms</td><td>&nbsp;</td><td>1ms</td><td>3ms</td><td>2ms</td></tr><tr><td rowspan="2">1-2ms</td><td>P4</td><td>0ms</td><td rowspan="2">&nbsp; &nbsp; &nbsp; &nbsp; P3</td><td>1ms</td><td>2ms</td><td>1ms</td></tr><tr><td>P3</td><td>1ms</td><td>0ms</td><td>8ms</td><td>8ms</td></tr><tr><td rowspan="3">2-3ms</td><td><s><strong>P4</strong></s></td><td><s><strong>0ms</strong></s></td><td rowspan="3"><strong>&nbsp; &nbsp;&nbsp;</strong> &nbsp;P3, P1</td><td><s><strong>1ms</strong></s></td><td><s><strong>1ms</strong></s></td><td><s><strong>0ms</strong></s></td></tr><tr><td>P3</td><td>1ms</td><td>0ms</td><td>8ms</td><td>8ms</td></tr><tr><td>P1</td><td>2ms</td><td>0ms</td><td>6ms</td><td>6ms</td></tr><tr><td rowspan="2">3-4ms</td><td>P3</td><td>1ms</td><td rowspan="2">
+        
+        <p>&nbsp; &nbsp;&nbsp;</p>
+        
+        
+        
+        <p>&nbsp; &nbsp; &nbsp; &nbsp; P3</p>
+        
+        </td><td>0ms</td><td>8ms</td><td>8ms</td></tr><tr><td>P1</td><td>2ms</td><td>1ms</td><td>6ms</td><td>5ms</td></tr><tr><td rowspan="3">4-5ms</td><td>P3</td><td>1ms</td><td rowspan="3">&nbsp; &nbsp; &nbsp; &nbsp;P3, P1</td><td>0ms</td><td>8ms</td><td>8ms</td></tr><tr><td>P1</td><td>2ms</td><td>0ms</td><td>5ms</td><td>5ms</td></tr><tr><td>P5</td><td>4ms</td><td>1ms</td><td>4ms</td><td>3ms</td></tr><tr><td rowspan="4">5-6ms</td><td>P3</td><td>1ms</td><td rowspan="4">&nbsp; &nbsp;P3, P5, P1</td><td>0ms</td><td>8ms</td><td>8ms</td></tr><tr><td>P1</td><td>2ms</td><td>0ms</td><td>5ms</td><td>5ms</td></tr><tr><td>P5</td><td>4ms</td><td>0ms</td><td>3ms</td><td>3ms</td></tr><tr><td>P2</td><td>5ms</td><td>1ms</td><td>2ms</td><td>1ms</td></tr><tr><td rowspan="4">6-7ms</td><td>P3</td><td>1ms</td><td rowspan="4">&nbsp; &nbsp;P3, P5, P1</td><td>0ms</td><td>8ms</td><td>8ms</td></tr><tr><td>P1</td><td>2ms</td><td>0ms</td><td>5ms</td><td>5ms</td></tr><tr><td>P5</td><td>4ms</td><td>0ms</td><td>3ms</td><td>3ms</td></tr><tr><td><s><strong>P2</strong></s></td><td><s><strong>5ms</strong></s></td><td><s><strong>1ms</strong></s></td><td><s><strong>1ms</strong></s></td><td><s><strong>0ms</strong></s></td></tr><tr><td rowspan="3">7-10ms</td><td>P3</td><td>1ms</td><td rowspan="3">&nbsp; &nbsp;P3, P1</td><td>0ms</td><td>8ms</td><td>8ms</td></tr><tr><td>P1</td><td>2ms</td><td>0ms</td><td>5ms</td><td>5ms</td></tr><tr><td><s><strong>P5</strong></s></td><td><s><strong>4ms</strong></s></td><td><s><strong>3ms</strong></s></td><td><s><strong>3ms</strong></s></td><td><s><strong>0ms</strong></s></td></tr><tr><td rowspan="2">10-15ms</td><td>P3</td><td>1ms</td><td rowspan="2">&nbsp; &nbsp; &nbsp; &nbsp; P3</td><td>0ms</td><td>8ms</td><td>8ms</td></tr><tr><td><s><strong>P1</strong></s></td><td><s><strong>4ms</strong></s></td><td><s><strong>4ms</strong></s></td><td><s><strong>5ms</strong></s></td><td><s><strong>0ms</strong></s></td></tr><tr><td>15-23ms</td><td><s><strong>P3</strong></s></td><td><s><strong>1ms</strong></s></td><td>&nbsp;</td><td><s><strong>8ms</strong></s></td><td><s><strong>8ms</strong></s></td><td><s><strong>0ms</strong></s></td></tr></tbody></table></figure>
+        
+        <p><strong>Gantt chart for above execution:</strong></p>
+        
+        <div style="width: 810px" class="wp-caption alignnone"><img src="https://media.geeksforgeeks.org/wp-content/uploads/20220427173554/UntitledDiagram3-660x69.jpg"><p class="wp-caption-text"><strong>Gantt chart for SRTF</strong></p></div>
+        
+        <p>Now, lets calculate average waiting time and turn around time:</p>
+        
+        
+        
+        <p>As we know,</p>
+        
+        <ul><li><strong>Turn Around time </strong>= Completion time &#8211; arrival time</li><li><strong>Waiting Time</strong> = Turn around time &#8211; burst time</li></ul><figure class="table"><table><thead><tr><th>Process &nbsp;</th><th>Completion Time&nbsp;</th><th>Turn Around Time&nbsp;</th><th>Waiting Time</th></tr></thead><tbody><tr><td>&nbsp;P1 &nbsp;</td><td>15</td><td>15-2 = 13</td><td>13-6 = 7</td></tr><tr><td>&nbsp;P2</td><td>7</td><td>7-5 = 2</td><td>2-2 = 0</td></tr><tr><td>&nbsp;P3</td><td>23</td><td>23-1 = 22</td><td>22-8 = 14</td></tr><tr><td>&nbsp;P4</td><td>3</td><td>3-0 = 3</td><td>3-3 = 0</td></tr><tr><td>&nbsp;P5</td><td>10</td><td>10-4 = 6</td><td>6-4 = 2</td></tr></tbody></table></figure>
+        
+        <p>Now,&nbsp;</p>
+        
+        <ul><li><strong>Average Turn around time</strong> = (13 + 2 + 22 + 3 + 6)/5 = 9.2</li><li><strong>Average waiting time</strong> = (7 + 0 + 14 + 0 + 2)/5 = 23/5 = 4.6</li></ul><h3>Some of the key characteristics of SRTF&nbsp;</h3><ul><li>Preemptive: SRTF is a preemptive algorithm, which means that the currently running process can be interrupted if a new process arrives with a shorter burst time. This helps in ensuring that the processes with the shortest burst times are executed first.</li><li>Dynamic: SRTF is a dynamic algorithm, which means that it can adapt to changes in the arrival time and burst time of processes. It constantly re-evaluates the remaining burst time of each process and schedules the process with the shortest remaining time.</li><li>Low waiting time: SRTF is known for its low waiting time. By selecting the process with the shortest remaining burst time, it ensures that the processes with the shortest burst times are executed first, which reduces the average waiting time of processes.</li><li>SRTF has a higher complexity than other scheduling algorithms like FCFS (First Come First Serve) and RR (Round Robin), because it requires frequent context switches and preemptions.</li></ul>
+        
+        <p><strong><u>Implementation of SRTF Algorithm:</u></strong>&nbsp;</p>
+        
+        
+        
+        <p><strong>Approach:</strong></p>
+        
+        <ul><li>Traverse until all process gets completely executed.<ul><li>Find process with minimum remaining time at every single time lap.</li><li>Reduce its time by 1.</li><li>Check if its remaining time becomes 0&nbsp;</li><li>Increment the counter of process completion.</li><li>Completion time of current process = current_time + 1;</li><li>Calculate waiting time for each completed process.<ul><li><strong>&nbsp;wt[i]= Completion time &#8211; arrival_time-burst_time</strong></li></ul></li><li>Increment time lap by one.</li></ul></li><li>Find turnaround time (waiting_time + burst_time).</li></ul>
+        
+    </section>
+  </body>
+</html>

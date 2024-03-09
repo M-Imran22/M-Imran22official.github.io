@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Home.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>LNH-Priority</title>
+  </head>
+  <body class="algorithm-body" style="overflow: hidden">
+    <div>
+      <nav class="notes-navbar">
+        <ul>
+          <li style="float: left">
+            <a class="active" href="#about">LOGO</a>
+          </li>
+          <li>
+            <a href="Home.html"><i class="fa-solid fa-house"></i> Home</a>
+          </li>
+          <li>
+            <a href="non-preemptive-notes.html"
+              ><i class="fa-solid fa-book"></i> Notes</a
+            >
+          </li>
+          <li>
+            <a href="fcfs.html"><i class="fa-solid fa-book"></i> Algorithms</a>
+          </li>
+          <li><a href="#contact">About Us</a></li>
+        </ul>
+      </nav>
+    </div>
+    <section class="notes-main">
+      <div class="notes-left-bar grid-item">
+        <div class="notes-side-bar">
+          <h2>Algorithms</h2>
+          <ul>
+            <h3 style="text-align: center; padding-top: 25px">
+              Non-Pre-emptive
+            </h3>
+            <li>
+              <a href="fcfs.html"
+                >FCFS<br /><i style="font-size: 14px"
+                  >(First Come First Serive)</i
+                ></a
+              >
+            </li>
+            <li>
+              <a href="sjf.html"
+                >SJF<br /><i style="font-size: 14px">(Shortest Job First)</i></a
+              >
+            </li>
+            <li>
+              <a href="ljf.html"
+                >LJF<br /><i style="font-size: 14px">(Longest Job First)</i></a
+              >
+            </li>
+            <li>
+              <a href="HNHpriority.html"
+                >HNH<br /><i style="font-size: 14px">(Higher Number Higher)</i
+                ><br />Priority Based
+              </a>
+            </li>
+            <li>
+              <a href="LNHpriority.html"
+                >LNH<br /><i style="font-size: 14px">(Lower Number Lower)</i
+                ><br />Priority Based</a
+              >
+            </li>
+          </ul>
+          <ul class="preemptive-links">
+            <h3 style="text-align: center; padding-top: 25px">Pre-emptive</h3>
+            <li><a href="RR.html">Round Robin</a></li>
+            <li>
+              <a href="SRTF.html" class="sjf"
+                >SRTF<br /><i style="font-size: 14px"
+                  >(Shortest Remaining Time First)</i
+                ></a
+              >
+            </li>
+            <li>
+              <a href="LRTF.html"
+                >LRTF<br /><i style="font-size: 14px"
+                  >(Longest Remaining Time First)</i
+                ></a
+              >
+            </li>
+            <li>
+              <a href="HNH_Priority.html"
+                >HNH<br /><i style="font-size: 14px">(Higher Number Higher)</i
+                ><br />Priority Based
+              </a>
+            </li>
+            <li>
+              <a href="LNH_Priority.html"
+                >LNH<br /><i style="font-size: 14px">(Lower Number Higher)</i
+                ><br />Priority Based</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="notes-Main grid-item">
+        <div id="heading-fcfs">
+          Lower Number Higher (LNH) Priority <br />
+          CPU Scheduling (Non- preemptive)
+        </div>
+        <header id="headerFcfs">
+          <div id="form-fcfs">
+            <div id="InputOfNumberOfProcesses">
+              <input
+                type="number"
+                name=""
+                id="numProcesses"
+                placeholder="Enter the number of Processes"
+                min="1"
+                max="10"
+                required
+              />
+              <br />
+              <button onclick="generateFormField()" class="form-buttons">
+                Generate Form
+              </button>
+            </div>
+
+            <div id="formContainer">
+              <form
+                style="width: 40rem"
+                onsubmit="runSchedulingAlgorithm(event)"
+                id="formFieldsContainer"
+              ></form>
+            </div>
+          </div>
+
+          <div id="ganttChart"></div>
+
+          <div id="table"></div>
+        </header>
+      </div>
+    </section>
+
+    <script src="LNHpriority.js"></script>
+  </body>
+</html>
