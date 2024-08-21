@@ -3,6 +3,16 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
@@ -15,25 +25,8 @@
   </head>
   <body>
     <header class="slideshow-container">
-      <nav class="notes-navbar">
-        <ul>
-          <li style="float: left">
-            <a class="active" href="#about">LOGO</a>
-          </li>
-          <li>
-            <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
-          </li>
-          <li>
-            <a href="non-preemptive-notes.html"
-              ><i class="fa-solid fa-book"></i> Notes</a
-            >
-          </li>
-          <li>
-            <a href="fcfs.html"><i class="fa-solid fa-book"></i> Algorithms</a>
-          </li>
-          <li><a href="#contact">About Us</a></li>
-        </ul>
-      </nav>
+      <script src="navbar/navbar.js"></script>
+
       <div class="mySlides fade" style="background-color: #284b63">
         <h1 class="h1">
           From Theory to Practice <br />
@@ -103,18 +96,10 @@
           <a href="ljf.html" class="ljf"
             >LJF<br /><i style="font-size: 14px">(Longest Job First)</i></a
           >
-          <!-- <a href="HNHpriority.html" class="HNH-priority-based"
-            >HNH<br /><i style="font-size: 14px">(Higher Number Higher)</i
-            ><br />Priority Based
-          </a>
-          <a href="LNHpriority.html" class="LNH-priority-based"
-            >LNH<br /><i style="font-size: 14px">(Lower Number Lower)</i
-            ><br />Priority Based</a
-          > -->
         </div>
         <div class="bottomLine"></div>
       </div>
-      <div class="button-section" style="height: 1000px">
+      <div class="button-section">
         <h1 class="algorithm-h1">
           Choose the Best Pre-emptive Scheduling <br />Algorithm for your
           Problem

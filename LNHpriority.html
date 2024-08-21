@@ -11,29 +11,31 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Exo+2:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+      integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>LNH-Priority</title>
   </head>
   <body class="algorithm-body" style="overflow: hidden">
     <div>
-      <nav class="notes-navbar">
-        <ul>
-          <li style="float: left">
-            <a class="active" href="#about">LOGO</a>
-          </li>
-          <li>
-            <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
-          </li>
-          <li>
-            <a href="non-preemptive-notes.html"
-              ><i class="fa-solid fa-book"></i> Notes</a
-            >
-          </li>
-          <li>
-            <a href="fcfs.html"><i class="fa-solid fa-book"></i> Algorithms</a>
-          </li>
-          <li><a href="#contact">About Us</a></li>
-        </ul>
-      </nav>
+      <script src="navbar/navbar.js"></script>
+    </div>
+    <div class="hamburger-menu" onclick="toggleSidebar()">
+      <i class="fas fa-bars"></i>
     </div>
     <section class="notes-main">
       <div class="notes-left-bar grid-item">
@@ -143,7 +145,7 @@
         </header>
       </div>
     </section>
-
+    <script src="navbar/navbar.js"></script>
     <script src="LNHpriority.js"></script>
   </body>
 </html>

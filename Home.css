@@ -7,15 +7,21 @@ body {
   overflow: auto;
   font-family: "Exo 2";
 }
+
 .mySlides {
   width: 100%;
   height: 100%;
   justify-content: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 }
+
 .h1 {
-  margin-top: 15%;
+  margin-top: 5%;
   font-family: "Amatic SC", sans-serif;
-  font-size: 72px;
+  /* Use clamp to make the font size responsive */
+  font-size: clamp(3rem, 5vw, 4rem);
   color: #ffffff;
   text-align: center;
 }
@@ -32,6 +38,7 @@ body {
   display: none;
   transition: 0.6s ease;
 }
+
 /* Fading animation */
 .fade {
   animation-name: fade;
@@ -39,56 +46,129 @@ body {
 }
 
 nav {
-  position: absolute;
-  width: 100%;
-  height: 50px;
   background-color: #585858;
   position: fixed;
-  z-index: 1;
+  width: 100%;
+  top: 0;
+  z-index: 10;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-nav ul {
-  list-style-type: none;
+
+.nav-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+
+.logo {
+  font-size: 24px;
+  color: white;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
   margin: 0;
   padding: 0;
-  overflow: hidden;
-  position: fixed;
 }
 
-nav ul li {
-  float: left;
+.nav-links li {
+  margin-left: 20px;
 }
 
-nav ul li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 10px 18px;
+.nav-links li a {
   text-decoration: none;
-  font-size: 18px;
+  color: white;
+  padding: 10px 20px;
+  display: block;
 }
 
-nav ul li a:hover:not(.active) {
+.nav-links li a:hover {
   background-color: #111;
-  height: 50px;
 }
+
+/* Hamburger menu */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 20;
+}
+
+.hamburger .bar {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 4px 0;
+  transition: 0.4s;
+}
+
+/* Responsive styling for tablet and mobile */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    background-color: #585858;
+    width: 100%;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .nav-links li {
+    margin: 0;
+  }
+
+  .nav-links li a {
+    padding: 15px;
+    border-bottom: 1px solid #444;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  /* Toggle the menu visibility */
+  .nav-links.active {
+    display: flex;
+  }
+
+  .hamburger.active .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+  }
+
+  .hamburger.active .bar:nth-child(2) {
+    opacity: 0;
+  }
+
+  .hamburger.active .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
+}
+
 .preemptive-links {
   padding-bottom: 100px;
 }
 
 .active {
   background-color: #04aa6d;
-  margin-right: 720px;
   margin-left: 20px;
 }
 
 .about-process {
   width: 100%;
-  height: 1100px;
+  height: 900px;
   background-color: #d9d9d9;
 }
 .paragraph {
   text-align: center;
-  font-size: 32px;
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
   font-weight: 400;
   line-height: 3rem;
   font-family: "Exo 2";
@@ -101,75 +181,170 @@ nav ul li a:hover:not(.active) {
   padding: 100px 80px 0 500px;
   color: #ba181b;
 }
+
 .button-section {
-  margin-top: -60px;
+  margin-top: -54px;
   width: 100%;
-  height: 800px;
+  height: 600px;
   background-color: #284b63;
 }
+
 .algorithm-h1 {
-  padding-top: 150px;
+  padding-top: 50px;
   font-family: "Amatic SC", sans-serif;
-  font-size: 72px;
+  /* Use clamp for the algorithm heading */
+  font-size: clamp(2.5rem, 6vw, 4rem);
   color: #ffffff;
   text-align: center;
 }
+
 .buttons {
-  width: 900px;
-  position: relative;
-  left: 200px;
-  margin: 50px 70px;
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
-  align-content: space-between;
-  z-index: 0;
+  justify-content: center;
+  margin-top: 20px;
 }
+
 .buttons a {
   font-family: "Exo 2";
-  margin: 30px 45px;
+  margin: 20px;
   text-decoration: none;
   color: #ffffff;
   border-radius: 50% 20% / 10% 40%;
-  width: 200px;
-  height: 200px;
+  width: 150px;
+  height: 150px;
   text-align: center;
-  padding-top: 65px;
-  font-size: 26px;
+  padding-top: 50px;
+  font-size: 18px;
   font-weight: bold;
-  /* z-index: 0; */
   transition: 1s;
 }
+
 .buttons a:hover {
-  width: 205px;
-  height: 205px;
+  width: 160px;
+  height: 160px;
 }
+
 .fcfs {
   background-color: #a4161a;
 }
+
 .sjf {
   background-color: #353535;
-
   border-radius: 10px 100px / 120px;
 }
+
 .ljf {
   background-color: #ff6700;
 }
+
 .HNH-priority-based {
   background-color: #0975da;
-  margin: auto;
   border-radius: 10px 100px / 120px;
-  padding-top: 45px !important ;
 }
+
 .LNH-priority-based {
   background-color: darkgreen;
-  margin: auto;
   border-radius: 10px 100px / 120px;
-  padding-top: 45px !important ;
 }
+
 .bottomLine {
-  margin: 0 100px;
-  border-bottom: 1px solid #fff;
+  margin: 100px 100px;
+  border-bottom: 1px solid white;
 }
+
+/* Media Queries for responsiveness */
+@media (max-width: 1024px) {
+  .paragraph {
+    font-size: clamp(1.3rem, 2vw, 1.5rem);
+  }
+  .about-process #p1 {
+    padding: 100px 300px 0 80px;
+  }
+  .about-process #p2 {
+    padding: 50px 80px 0 300px;
+  }
+  .about-process {
+    height: 800px;
+  }
+}
+@media (max-width: 768px) {
+  .h1 {
+    font-size: clamp(2rem, 4vw, 2.5rem);
+  }
+
+  .algorithm-h1 {
+    font-size: clamp(2rem, 5vw, 3rem);
+  }
+
+  nav ul li a {
+    font-size: 16px;
+    padding: 8px 15px;
+  }
+
+  .buttons a {
+    width: 120px;
+    height: 120px;
+    padding-top: 40px;
+    font-size: 14px;
+  }
+  .buttons a i {
+    font-size: 10px !important;
+  }
+
+  .paragraph {
+    font-size: clamp(1rem, 2vw, 1.2rem);
+  }
+  .about-process #p1 {
+    padding: 100px 300px 0 80px;
+  }
+  .about-process #p2 {
+    padding: 50px 80px 0 300px;
+  }
+  .about-process {
+    height: 800px;
+  }
+}
+
+@media (max-width: 480px) {
+  nav ul li a {
+    font-size: 14px;
+    padding: 6px 10px;
+  }
+
+  .buttons a {
+    width: 100px;
+    height: 100px;
+    padding-top: 30px;
+    font-size: 12px;
+  }
+  .buttons a i {
+    font-size: 8px !important;
+  }
+
+  .h1,
+  .algorithm-h1 {
+    font-size: clamp(1.5rem, 6vw, 2rem);
+  }
+
+  .paragraph {
+    font-size: clamp(0.9rem, 3vw, 1.1rem);
+  }
+  .about-process #p1 {
+    padding: 50px 50px 0 20px;
+  }
+  .about-process #p2 {
+    padding: 50px 20px 0 15px;
+  }
+  .about-process {
+    height: 700px;
+  }
+}
+
+/*---------------------------------------------------------------------------------Styling Notes -------------------------------------------------------------------- */
+
+/* Base styles (for larger screens) */
 .notes-body {
   background-color: #353535;
   color: #fff;
@@ -177,23 +352,27 @@ nav ul li a:hover:not(.active) {
   line-height: 2rem;
   font-size: 18px;
 }
+
 .notes-navbar {
   top: 0;
   width: 100%;
   height: 50px;
   background-color: #585858;
   position: fixed;
+  z-index: 1000; /* Ensure navbar is on top */
 }
+
 .notes-main {
   margin-top: 60px;
   display: flex;
-  height: 100vh;
+  height: calc(100vh - 60px); /* Adjust height based on navbar height */
 }
+
 .notes-left-bar {
-  width: 270px;
   border-right: 1px solid #fff;
   overflow: auto;
 }
+
 .notes-side-bar h2 {
   text-align: center;
   border-bottom: 1px solid #fff;
@@ -202,16 +381,19 @@ nav ul li a:hover:not(.active) {
   font-family: "Amatic SC", sans-serif;
   font-size: 35px;
 }
+
 .notes-side-bar ul li {
   padding-top: 20px;
   display: flex;
 }
+
 .notes-side-bar-h3,
 .notes-side-bar ul li a {
   text-decoration: none;
   color: #fff;
   transition: 0.5s;
 }
+
 .notes-side-bar-h3:hover,
 .notes-side-bar a:hover,
 .notes-active a {
@@ -224,6 +406,7 @@ nav ul li a:hover:not(.active) {
   overflow: auto;
   padding: 0 200px 80px 30px;
 }
+
 .notes-heading {
   width: 100%;
   font-family: "Amatic SC", sans-serif;
@@ -242,17 +425,21 @@ th {
   border: 1px solid;
   text-align: center;
 }
+
 table {
   border-collapse: collapse;
 }
+
 table td {
   height: 70px;
   width: auto;
 }
+
 table th {
   height: 80px;
   background-color: #585858;
 }
+
 blockquote {
   margin: 10px 0;
   background: #585858;
@@ -261,6 +448,58 @@ blockquote {
   padding: 24px;
   font-style: italic;
   word-break: break-word;
+}
+.notes-side-bar {
+  width: 270px;
+  border-right: 1px solid #fff;
+  overflow: auto;
+  /* Keeps the sidebar fixed on larger screens */
+  transition: transform 0.3s ease; /* Smooth transition for opening/closing */
+}
+
+/* Hide the sidebar on smaller screens */
+@media (max-width: 768px) {
+  .notes-side-bar {
+    position: absolute;
+    transform: translateX(-100%); /* Initially hide the sidebar */
+  }
+
+  .notes-side-bar.open {
+    width: 768px;
+    position: inherit;
+    background-color: #284b63;
+    transform: translateX(0); /* Show the sidebar */
+  }
+}
+
+/* Style the hamburger menu */
+.hamburger-menu {
+  display: none; /* Hidden by default */
+  font-size: 24px;
+  cursor: pointer;
+  position: fixed;
+  top: 80px;
+  left: 10px;
+  z-index: 1000;
+}
+
+/* Show hamburger menu on smaller screens */
+@media (max-width: 768px) {
+  .hamburger-menu {
+    display: block;
+  }
+}
+
+/* Adjust the main content margin for smaller screens */
+@media (max-width: 768px) {
+  .notes-Main {
+    padding: 0 15px; /* Adjust padding */
+  }
+}
+@media (max-width: 425px) {
+  .notes-side-bar.open {
+    width: 425px; /* Adjust padding */
+  }
 }
 
 /*---------------------------------------------------------------------------------Styling FCFS -------------------------------------------------------------------- */
@@ -345,6 +584,8 @@ blockquote {
   border-radius: 5px;
 }
 
+/* Gantt Chart */
+
 #ganttChart div div {
   width: 10rem;
   height: 3rem;
@@ -376,30 +617,60 @@ blockquote {
   font-weight: bold;
 }
 
+/* Table Section */
 #table table {
-  /* border: 1px solid black; */
   border-collapse: collapse;
   text-align: center;
   margin-bottom: 50px;
   opacity: 0;
   transition: opacity 1s ease-in-out;
+  width: 100%;
 }
-#table table thead tr th {
-  border: 1px solid #fff;
-  padding: 0.4rem 1rem;
-  border-radius: 0.3rem;
+
+#table table.show {
+  opacity: 1;
 }
-#table table caption {
-  font-size: 1.5rem;
-  font-weight: bold;
-  text-align: center;
-}
+
 table tr td {
   border: 1px solid #fff;
   border-radius: 0.3rem;
   font-size: 1.2rem;
   padding: 0.2rem;
 }
-#table table.show {
-  opacity: 1;
+
+#table table thead tr th {
+  border: 1px solid #fff;
+  padding: 0.4rem 1rem;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 768px) {
+  #heading-fcfs {
+    font-size: 10vw;
+  }
+
+  #InputOfNumberOfProcesses input,
+  #formFieldsContainer input {
+    width: 100%; /* Make inputs take full width */
+  }
+  .form-buttons {
+    width: 100%; /* Full width on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  #heading-fcfs {
+    font-size: 12vw;
+  }
+  #form-fcfs {
+    width: 70%;
+  }
+  #formFieldsContainer,
+  #InputOfNumberOfProcesses {
+    padding: 15px;
+    width: 100%;
+  }
+  #ganttChart div {
+    flex: 1 1 100%; /* Each div takes full width on small screens */
+  }
 }
